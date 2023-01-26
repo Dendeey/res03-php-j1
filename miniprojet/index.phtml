@@ -1,0 +1,73 @@
+<?php
+
+$students = [
+    [
+        "firstName" => "James",
+        "lastName" => "Fields",
+        "grades" => [12, 11, 15],
+        "average" => -1
+    ],
+    [
+        "firstName" => "Richard",
+        "lastName" => "Stein",
+        "grades" => [18, 12, 13],
+        "average" => -1
+    ],
+    [
+        "firstName" => "Mark",
+        "lastName" => "Hartoff",
+        "grades" => [9, 11, 10],
+        "average" => -1
+    ],
+    [
+        "firstName" => "Thomas",
+        "lastName" => "Nestle",
+        "grades" => [9, 8, 5],
+        "average" => -1
+    ],
+    [
+        "firstName" => "Jeremy",
+        "lastName" => "Brent",
+        "grades" => [18, 15, 16],
+        "average" => -1
+    ],
+    
+    
+];
+
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        
+    </head>
+    <body>
+        <main>
+            <?php 
+                foreach($students as $h1){
+            ?>
+            <article class="student">
+                <header>
+                    <h1><?php echo "{$h1["firstName"]} {$h1["lastName"]}";  ?></h1>
+                </header>
+                <section>
+                    <h2>Notes : </h2>
+                    <ul><?php foreach($grades as $grade){ ?>
+                        <li><? php ?></li>
+                        <li>Note 2</li>
+                        <li>Note 3</li>
+                        <? php }; ?>
+                    </ul>
+                </section>
+                <footer>
+                    <h3>Moyenne des notes de l'étudiant </h3>
+                </footer>
+            </article> <?php }; ?>
+        </main>
+    </body>
+</html>
+
+
