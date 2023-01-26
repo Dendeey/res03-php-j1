@@ -35,6 +35,27 @@ $students = [
     
 ];
 
+/*function average(array $gradeArray)
+{
+    foreach($gradeArray as $grade)
+    {
+        
+    }
+}*/
+
+function calculateAverage(array $student) : float
+{
+    $sum = 0;
+    
+    foreach($student as $students)
+    {
+        $sum = $sum + $students;
+    }
+    
+    return $sum / count($student);
+
+    
+}
 
 
 ?>
@@ -47,27 +68,26 @@ $students = [
     <body>
         <main>
             <?php 
-                foreach($students as $h1){
+                foreach($students as $student){ 
             ?>
             <article class="student">
                 <header>
-                    <h1><?php echo "{$h1["firstName"]} {$h1["lastName"]}";  ?></h1>
+                    <h1><?php echo "{$student["firstName"]} {$student["lastName"]}";  ?></h1>
                 </header>
                 <section>
                     <h2>Notes : </h2>
-                    <ul><?php foreach($grades as $grade){ ?>
-                        <li><? php ?></li>
-                        <li>Note 2</li>
-                        <li>Note 3</li>
-                        <? php }; ?>
+                    
+                    <ul>
+                        <?php foreach($student["grades"] as $grade){ ?>
+                        <li><?php echo "{$grade}" ?></li>
+                        <?php }; ?>
                     </ul>
+                    
                 </section>
                 <footer>
-                    <h3>Moyenne des notes de l'étudiant </h3>
+                    <h3><?php echo calculateAverage($student["grades"]); ?></h3>
                 </footer>
             </article> <?php }; ?>
         </main>
     </body>
 </html>
-
-
