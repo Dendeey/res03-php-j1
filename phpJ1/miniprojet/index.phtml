@@ -1,0 +1,115 @@
+<?php
+
+$students = [
+    [
+        "firstName" => "James",
+        "lastName" => "Fields",
+        "grades" => [12, 11, 15],
+        "average" => -1
+    ],
+    [
+        "firstName" => "Richard",
+        "lastName" => "Stein",
+        "grades" => [18, 12, 13],
+        "average" => -1
+    ],
+    [
+        "firstName" => "Mark",
+        "lastName" => "Hartoff",
+        "grades" => [9, 11, 10],
+        "average" => -1
+    ],
+    [
+        "firstName" => "Thomas",
+        "lastName" => "Nestle",
+        "grades" => [9, 8, 5],
+        "average" => -1
+    ],
+    [
+        "firstName" => "Jeremy",
+        "lastName" => "Brent",
+        "grades" => [18, 15, 16],
+        "average" => -1
+    ],
+    
+    
+];
+
+/*function average(array $gradeArray)
+{
+    foreach($gradeArray as $grade)
+    {
+        
+    }
+}*/
+
+function calculateAverage(array $student) : float
+{
+    $sum = 0;
+    
+    foreach($student as $students)
+    {
+        $sum = $sum + $students;
+    }
+    
+    return $sum / count($student);
+    
+}
+
+function articleColor(float $average) 
+{
+
+    if($average < 10)
+    {
+        'red';
+        return "red";
+    }
+    else if($average >= 10 && $average <= 13)
+    {
+        'orange';
+        return "orange";
+    }
+    else
+    {
+        'green';
+        return "green";
+    }
+    
+    
+    
+}
+
+
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <main>
+            <?php 
+                foreach($students as $student){ 
+            ?>
+            <article class="<?php echo articleColor(calculateAverage($student["grades"])) ?>">
+                <header>
+                    <h1><?php echo "{$student["firstName"]} {$student["lastName"]}";  ?></h1>
+                </header>
+                <section>
+                    <h2>Notes : </h2>
+                    
+                    <ul>
+                        <?php foreach($student["grades"] as $grade){ ?>
+                        <li><?php echo "{$grade}" ?></li>
+                        <?php }; ?>
+                    </ul>
+                    
+                </section>
+                <footer>
+                    <h3><?php echo calculateAverage($student["grades"]); ?></h3>
+                </footer>
+            </article> <?php }; ?>
+        </main>
+    </body>
+</html>
