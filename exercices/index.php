@@ -45,16 +45,42 @@ for($i = 0; $i < count($animals); $i++)
 // Exercice 6
 
 $numbers = [28, 32, 44, -67, 18, 24, -98];
-
-foreach($numbers as $negativeNumber)
-{
-    if($negativeNumber = $numbers < 0)
-    {
-        echo "$negativeNumber";
-    }
     
-    echo "$negativeNumber";
+foreach($numbers as $negNumber)
+{
+    if($negNumber < 0)
+    {
+        echo $negNumber;
+    }
 }
 
+// Exercice 7
+
+$user = [
+    "firstName" => "Barack",
+    "lastName" => "Obama"
+];
+
+echo "Je suis {$user["firstName"]} {$user["lastName"]}, le 44ème président des USA.";
+
+// Exercice 8
+
+$users = [
+    [
+        "firstName" => "Mari",
+        "lastName" => "Doucet"
+    ],
+    [
+        "firstName" => "Hugues",
+        "lastName" => "Froger"
+    ]
+];
+
+foreach($users as $user)
+{
+    echo "<br>";
+    echo $user["firstName"], $user["lastName"];
+    
+}
 
 ?>
